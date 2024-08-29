@@ -23,7 +23,7 @@ final class StartViewController: UIViewController {
     
     private lazy var authorizationPromptLabel: UILabel = {
         let label = UILabel()
-        label.text = "Авторизируйтесь, чтобы продолжить работу"
+        label.text = "Авторизуйтесь, чтобы продолжить работу"
         label.textColor = .gray
         label.font = .systemFont(ofSize: 14)
         
@@ -143,7 +143,8 @@ final class StartViewController: UIViewController {
     // MARK: - Action
     
     @objc private func loginButtonTapped() {
-        // TODO: Логика перехода на экран логина
+        let loginVC = LoginViewController()        
+        navigationController?.pushViewController(loginVC, animated: true)
     }
     
     @objc private func registerButtonTapped() {
