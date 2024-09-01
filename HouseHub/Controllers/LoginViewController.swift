@@ -241,7 +241,8 @@ final class LoginViewController: UIViewController {
     }
     
     @objc private func forgotPasswordTapped() {
-        // TODO: Логика для кнопки "Забыли пароль?"
+        let webViewController = WebViewController(websiteLink: Constants.URLs.websiteLink)
+        navigationController?.pushViewController(webViewController, animated: true)
     }
     
     @objc private func togglePasswordVisibility() {

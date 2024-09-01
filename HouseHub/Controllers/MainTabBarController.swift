@@ -38,7 +38,7 @@ final class MainTabBarController: UITabBarController {
             selectedImage: UIImage(systemName: "key.fill")
         )
         
-        let emptyVC1 = UIViewController()
+        let emptyVC1 = WebViewController(websiteLink: Constants.URLs.websiteLink)
         emptyVC1.view.backgroundColor = .white
         emptyVC1.tabBarItem = UITabBarItem(
             title: "Заявки",
@@ -46,7 +46,7 @@ final class MainTabBarController: UITabBarController {
             selectedImage: UIImage(systemName: "checklist")
         )
         
-        let emptyVC2 = UIViewController()
+        let emptyVC2 = WebViewController(websiteLink: Constants.URLs.websiteLink)
         emptyVC2.view.backgroundColor = .white
         emptyVC2.tabBarItem = UITabBarItem(
             title: "Услуги",
@@ -54,7 +54,7 @@ final class MainTabBarController: UITabBarController {
             selectedImage: UIImage(systemName: "star.fill")
         )
         
-        let emptyVC3 = UIViewController()
+        let emptyVC3 = WebViewController(websiteLink: Constants.URLs.websiteLink)
         emptyVC3.view.backgroundColor = .white
         emptyVC3.tabBarItem = UITabBarItem(
             title: "Чат",
@@ -62,7 +62,7 @@ final class MainTabBarController: UITabBarController {
             selectedImage: UIImage(systemName: "message.fill")
         )
         
-        let emptyVC4 = UIViewController()
+        let emptyVC4 = WebViewController(websiteLink: Constants.URLs.websiteLink)
         emptyVC4.view.backgroundColor = .white
         emptyVC4.tabBarItem = UITabBarItem(
             title: "Контакты",

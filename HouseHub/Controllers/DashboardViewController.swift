@@ -311,6 +311,7 @@ final class DashboardViewController: UIViewController {
         iconImageView.contentMode = .scaleAspectFit
         iconImageView.tintColor = .systemGreen
         iconImageView.translatesAutoresizingMaskIntoConstraints = false
+        
         button.addSubview(iconImageView)
         
         let titleLabel = UILabel()
@@ -318,6 +319,7 @@ final class DashboardViewController: UIViewController {
         titleLabel.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         titleLabel.textColor = .black
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        
         button.addSubview(titleLabel)
         
         let subtitleLabel = UILabel()
@@ -366,11 +368,15 @@ final class DashboardViewController: UIViewController {
         label.textColor = .black
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
-        button.addSubview(label)
         
+        button.addSubview(label)
         button.backgroundColor = UIColor.gray.withAlphaComponent(0.1)
         button.layer.cornerRadius = 10
         button.clipsToBounds = true
+        button.addTarget(
+            self, action: #selector(camerasButtonTapped),
+            for: .touchUpInside
+        )
         
         NSLayoutConstraint.activate([
             iconContainer.centerXAnchor.constraint(equalTo: button.centerXAnchor),
@@ -411,11 +417,16 @@ final class DashboardViewController: UIViewController {
         label.textColor = .black
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
-        button.addSubview(label)
         
+        button.addSubview(label)
         button.backgroundColor = UIColor.gray.withAlphaComponent(0.1)
         button.layer.cornerRadius = 10
         button.clipsToBounds = true
+        button.addTarget(
+            self,
+            action: #selector(gateButtonTapped),
+            for: .touchUpInside
+        )
         
         NSLayoutConstraint.activate([
             iconContainer.centerXAnchor.constraint(equalTo: button.centerXAnchor),
@@ -461,6 +472,11 @@ final class DashboardViewController: UIViewController {
         button.backgroundColor = UIColor.gray.withAlphaComponent(0.1)
         button.layer.cornerRadius = 10
         button.clipsToBounds = true
+        button.addTarget(
+            self,
+            action: #selector(offersButtonTapped),
+            for: .touchUpInside
+        )
         
         NSLayoutConstraint.activate([
             iconContainer.centerXAnchor.constraint(equalTo: button.centerXAnchor),
@@ -496,13 +512,18 @@ final class DashboardViewController: UIViewController {
         return stackView
     }()
     
-    private let allServicesButton: UIButton = {
+    private lazy var allServicesButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Все сервисы", for: .normal)
         button.backgroundColor = .wSunsetOrange
         button.titleLabel?.font = .systemFont(ofSize: 16, weight: .semibold)
         button.tintColor = .black
         button.layer.cornerRadius = 10
+        button.addTarget(
+            self,
+            action: #selector(allServicesButtonTapped),
+            for: .touchUpInside
+        )
         
         return button
     }()
@@ -744,5 +765,27 @@ final class DashboardViewController: UIViewController {
         let firstNameInitial = firstName.prefix(1)
         let secondNameInitial = secondName.prefix(1)
         return "\(lastName) \(firstNameInitial).\(secondNameInitial)."
+    }
+    
+    // MARK: - Action
+    
+    @objc private func camerasButtonTapped() {
+        let webViewController = WebViewController(websiteLink: Constants.URLs.websiteLink)
+        navigationController?.pushViewController(webViewController, animated: true)
+    }
+    
+    @objc private func gateButtonTapped() {
+        let webViewController = WebViewController(websiteLink: Constants.URLs.websiteLink)
+        navigationController?.pushViewController(webViewController, animated: true)
+    }
+    
+    @objc private func offersButtonTapped() {
+        let webViewController = WebViewController(websiteLink: Constants.URLs.websiteLink)
+        navigationController?.pushViewController(webViewController, animated: true)
+    }
+    
+    @objc private func  allServicesButtonTapped() {
+        let webViewController = WebViewController(websiteLink: Constants.URLs.websiteLink)
+        navigationController?.pushViewController(webViewController, animated: true)
     }
 }

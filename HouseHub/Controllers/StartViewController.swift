@@ -148,10 +148,12 @@ final class StartViewController: UIViewController {
     }
     
     @objc private func registerButtonTapped() {
-        // TODO: Логика перехода на экран регистрации
+        let webViewController = WebViewController(websiteLink: Constants.URLs.websiteLink)
+        navigationController?.pushViewController(webViewController, animated: true)
     }
     
     @objc private func inviteToManageHomeTapped() {
-        // TODO: Логика перехода на WebView
+        let webViewController = WebViewController(websiteLink: Constants.URLs.websiteLink)
+        navigationController?.pushViewController(webViewController, animated: true)
     }
 }
