@@ -9,9 +9,13 @@ import UIKit
 
 final class LoginViewController: UIViewController {
     
+    // MARK: - Private Properties
+    
+    private let authService = AuthService()
+    
     // MARK: - UI Components
     
-    private let titleLabel: UILabel = {
+    private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Вход в аккаунт"
         label.font = UIFont.systemFont(ofSize: 24, weight: .bold)
@@ -75,7 +79,7 @@ final class LoginViewController: UIViewController {
         return textField
     }()
     
-    private let loginButton: UIButton = {
+    private lazy var loginButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Войти", for: .normal)
         button.backgroundColor = .wSunsetOrange
@@ -99,6 +103,18 @@ final class LoginViewController: UIViewController {
         setupNavigationBar()
         addElements()
         setupLayoutConstraint()
+    }
+    
+    // MARK: - Private Methods
+    
+    private func navigateToDashboard() {
+        let mainTabBarController = MainTabBarController()
+        
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           let window = windowScene.windows.first {
+            window.rootViewController = mainTabBarController
+            window.makeKeyAndVisible()
+        }
     }
     
     // MARK: - Setup Navigation Bar
@@ -132,6 +148,14 @@ final class LoginViewController: UIViewController {
         ], for: .normal)
         
         navigationItem.rightBarButtonItem = forgotPasswordButton
+    }
+    
+    // MARK: - Helpers
+    
+    private func showAlert(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alertController, animated: true)
     }
     
     // MARK: - Setup View
@@ -169,6 +193,20 @@ final class LoginViewController: UIViewController {
         ])
     }
     
+    // MARK: - Animation
+    
+    private func transitionToDashboardWithAnimation() {
+        let mainTabBarController = MainTabBarController()
+        
+        UIView.transition(with: view.window!, duration: 0.5, options: .transitionCrossDissolve, animations: {
+            if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+               let window = windowScene.windows.first {
+                window.rootViewController = mainTabBarController
+                window.makeKeyAndVisible()
+            }
+        }, completion: nil)
+    }
+    
     // MARK: - Action
     
     @objc private func backButtonTapped() {
@@ -176,7 +214,30 @@ final class LoginViewController: UIViewController {
     }
     
     @objc private func loginButtonTapped() {
-        // TODO: Логика для кнопки "Войти"
+        guard let username = emailTextField.text, !username.isEmpty,
+              let password = passwordTextField.text, !password.isEmpty else {
+            showAlert(
+                title: "Ошибка",
+                message: "Пожалуйста, введите логин и пароль"
+            )
+            return
+        }
+        
+        authService.performLogin(username: username, password: password) { [weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let json):
+                    print("Ответ сервера: \(json)")
+                    if let error = json["error"] as? String {
+                        self?.showAlert(title: "Ошибка", message: error)
+                    } else {
+                        self?.transitionToDashboardWithAnimation()
+                    }
+                case .failure(let error):
+                    self?.showAlert(title: "Ошибка", message: error.localizedDescription)
+                }
+            }
+        }
     }
     
     @objc private func forgotPasswordTapped() {

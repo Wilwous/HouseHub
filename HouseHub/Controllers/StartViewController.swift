@@ -11,7 +11,7 @@ final class StartViewController: UIViewController {
     
     // MARK: - UI Components
     
-    private let titleLabel: UILabel = {
+    private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Добро\nпожаловать!"
         label.font = .systemFont(ofSize: 40, weight: .bold)
@@ -30,7 +30,7 @@ final class StartViewController: UIViewController {
         return label
     }()
     
-    private let loginButton: UIButton = {
+    private lazy var loginButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Вход", for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 14, weight: .semibold)
@@ -46,7 +46,7 @@ final class StartViewController: UIViewController {
         return button
     }()
     
-    private let registerButton: UIButton = {
+    private lazy var registerButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Регистрация", for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 14, weight: .semibold)
@@ -143,7 +143,7 @@ final class StartViewController: UIViewController {
     // MARK: - Action
     
     @objc private func loginButtonTapped() {
-        let loginVC = LoginViewController()        
+        let loginVC = LoginViewController()
         navigationController?.pushViewController(loginVC, animated: true)
     }
     
