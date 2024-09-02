@@ -14,10 +14,6 @@ import WebKit
 
 final class WebViewController: UIViewController {
     
-    // MARK: - Static Property
-    
-    static let websiteLink = "https://clck.ru/3CxnzT"
-    
     // MARK: - UI Components
     
     private lazy var webView: WKWebView = {
@@ -71,7 +67,7 @@ final class WebViewController: UIViewController {
     }
     
     private func loadWebView() {
-        if let url = URL(string: Constants.URLs.websiteLink) {
+        if let url = URL(string: Constants.websiteLink) {
             activityIndicator.startAnimating()
             webView.load(URLRequest(url: url))
         } else {

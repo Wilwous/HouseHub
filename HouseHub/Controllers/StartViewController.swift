@@ -148,12 +148,12 @@ final class StartViewController: UIViewController {
     }
     
     @objc private func registerButtonTapped() {
-        let webViewController = WebViewController(websiteLink: Constants.URLs.websiteLink)
+        let webViewController = WebViewController(websiteLink: Constants.websiteLink)
         navigationController?.pushViewController(webViewController, animated: true)
     }
     
     @objc private func inviteToManageHomeTapped() {
-        let webViewController = WebViewController(websiteLink: Constants.URLs.websiteLink)
+        let webViewController = WebViewController(websiteLink: Constants.websiteLink)
         navigationController?.pushViewController(webViewController, animated: true)
     }
 }

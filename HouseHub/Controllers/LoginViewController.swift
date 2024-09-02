@@ -241,7 +241,7 @@ final class LoginViewController: UIViewController {
     }
     
     @objc private func forgotPasswordTapped() {
-        let webViewController = WebViewController(websiteLink: Constants.URLs.websiteLink)
+        let webViewController = WebViewController(websiteLink: Constants.websiteLink)
         navigationController?.pushViewController(webViewController, animated: true)
     }
     

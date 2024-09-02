@@ -18,14 +18,12 @@ final class DashboardViewController: UIViewController {
     
     private lazy var headerView: UIView = {
         let view = UIView()
-        view.backgroundColor = .wDeepNavyBlue
         
         return view
     }()
     
     private lazy var avatarImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "IMG_8152")
         imageView.layer.cornerRadius = 25
         imageView.clipsToBounds = true
         
@@ -769,22 +767,22 @@ final class DashboardViewController: UIViewController {
     // MARK: - Action
     
     @objc private func camerasButtonTapped() {
-        let webViewController = WebViewController(websiteLink: Constants.URLs.websiteLink)
+        let webViewController = WebViewController(websiteLink: Constants.websiteLink)
         navigationController?.pushViewController(webViewController, animated: true)
     }
     
     @objc private func gateButtonTapped() {
-        let webViewController = WebViewController(websiteLink: Constants.URLs.websiteLink)
+        let webViewController = WebViewController(websiteLink: Constants.websiteLink)
         navigationController?.pushViewController(webViewController, animated: true)
     }
     
     @objc private func offersButtonTapped() {
-        let webViewController = WebViewController(websiteLink: Constants.URLs.websiteLink)
+        let webViewController = WebViewController(websiteLink: Constants.websiteLink)
         navigationController?.pushViewController(webViewController, animated: true)
     }
     
     @objc private func  allServicesButtonTapped() {
-        let webViewController = WebViewController(websiteLink: Constants.URLs.websiteLink)
+        let webViewController = WebViewController(websiteLink: Constants.websiteLink)
         navigationController?.pushViewController(webViewController, animated: true)
     }
 }

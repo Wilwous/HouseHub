@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C4716BD2C862419008654F3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 7C4716BC2C862419008654F3 /* README.md */; };
 		7C72AE652C7FBB0F002C3113 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C72AE642C7FBB0F002C3113 /* AppDelegate.swift */; };
 		7C72AE672C7FBB0F002C3113 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C72AE662C7FBB0F002C3113 /* SceneDelegate.swift */; };
 		7C72AE692C7FBB0F002C3113 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C72AE682C7FBB0F002C3113 /* StartViewController.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7C4716BC2C862419008654F3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		7C72AE612C7FBB0F002C3113 /* HouseHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HouseHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C72AE642C7FBB0F002C3113 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C72AE662C7FBB0F002C3113 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,7 +109,7 @@
 		7C72AE7A2C7FBBE2002C3113 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				7CFAA8972C84F3F5002B5917 /* Constants.swift */,
+				7C4716BC2C862419008654F3 /* README.md */,
 				7C72AE6F2C7FBB10002C3113 /* LaunchScreen.storyboard */,
 				7C72AE6D2C7FBB10002C3113 /* Assets.xcassets */,
 			);
@@ -127,6 +129,7 @@
 			children = (
 				7C72AE812C80CDA4002C3113 /* AuthService.swift */,
 				7C72AE852C811534002C3113 /* DashboardService.swift */,
+				7CFAA8972C84F3F5002B5917 /* Constants.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C4716BD2C862419008654F3 /* README.md in Resources */,
 				7C72AE6E2C7FBB10002C3113 /* Assets.xcassets in Resources */,
 				7C72AE712C7FBB10002C3113 /* Base in Resources */,
 			);
