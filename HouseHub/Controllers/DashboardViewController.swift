@@ -578,18 +578,17 @@ final class DashboardViewController: UIViewController {
             headerView.topAnchor.constraint(equalTo: view.topAnchor),
             headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            headerView.heightAnchor.constraint(equalToConstant: 100),
             
             avatarImageView.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 16),
-            avatarImageView.topAnchor.constraint(equalTo: headerView.topAnchor, constant: 69),
+            avatarImageView.bottomAnchor.constraint(equalTo: contentView.topAnchor, constant: -37),
             avatarImageView.widthAnchor.constraint(equalToConstant: 40),
             avatarImageView.heightAnchor.constraint(equalToConstant: 40),
             
             userNameLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 12),
-            userNameLabel.topAnchor.constraint(equalTo: headerView.topAnchor, constant: 69),
+            userNameLabel.bottomAnchor.constraint(equalTo: userAddressLabel.topAnchor, constant: -4),
             
             userAddressLabel.leadingAnchor.constraint(equalTo: userNameLabel.leadingAnchor),
-            userAddressLabel.topAnchor.constraint(equalTo: userNameLabel.bottomAnchor, constant: 4),
+            userAddressLabel.bottomAnchor.constraint(equalTo: contentView.topAnchor, constant: -20),
             
             notificationIconView.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -16),
             notificationIconView.centerYAnchor.constraint(equalTo: userNameLabel.centerYAnchor),
@@ -604,7 +603,7 @@ final class DashboardViewController: UIViewController {
             notificationBadgeLabel.centerXAnchor.constraint(equalTo: notificationBadgeView.centerXAnchor),
             notificationBadgeLabel.centerYAnchor.constraint(equalTo: notificationBadgeView.centerYAnchor),
             
-            contentView.topAnchor.constraint(equalTo: view.topAnchor, constant: 150),
+            contentView.topAnchor.constraint(equalTo: view.bottomAnchor, constant: -600),
             contentView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             contentView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             contentView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
@@ -640,7 +639,7 @@ final class DashboardViewController: UIViewController {
             allServicesButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
             allServicesButton.topAnchor.constraint(equalTo: buttonStackView.bottomAnchor, constant: 15),
             allServicesButton.heightAnchor.constraint(equalToConstant: 60),
-            allServicesButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -70)
+            allServicesButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -50)
         ])
     }
     
