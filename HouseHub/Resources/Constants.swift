@@ -7,8 +7,6 @@
 
 import Foundation
 
-struct Constants {
-    struct URLs {
-        static let websiteLink = "https://clck.ru/3CxnzT"
-    }
+enum Constants {
+    static let websiteLink = "https://clck.ru/3CxnzT"
 }

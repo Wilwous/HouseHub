@@ -71,7 +71,7 @@ final class WebViewController: UIViewController {
     }
     
     private func loadWebView() {
-        if let url = URL(string: Constants.URLs.websiteLink) {
+        if let url = URL(string: Constants.websiteLink) {
             activityIndicator.startAnimating()
             webView.load(URLRequest(url: url))
         } else {
