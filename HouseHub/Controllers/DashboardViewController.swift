@@ -18,14 +18,12 @@ final class DashboardViewController: UIViewController {
     
     private lazy var headerView: UIView = {
         let view = UIView()
-        view.backgroundColor = .wDeepNavyBlue
         
         return view
     }()
     
     private lazy var avatarImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "IMG_8152")
         imageView.layer.cornerRadius = 25
         imageView.clipsToBounds = true
         
